@@ -25,13 +25,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeLoginModal = document.querySelector(".close-login-modal");
   const loginMessage = document.getElementById("login-message");
 
-  // Activity categories with corresponding colors
+  // Activity categories with corresponding colors - Pastel theme
   const activityTypes = {
-    sports: { label: "Sports", color: "#e8f5e9", textColor: "#2e7d32" },
-    arts: { label: "Arts", color: "#f3e5f5", textColor: "#7b1fa2" },
-    academic: { label: "Academic", color: "#e3f2fd", textColor: "#1565c0" },
-    community: { label: "Community", color: "#fff3e0", textColor: "#e65100" },
-    technology: { label: "Technology", color: "#e8eaf6", textColor: "#3949ab" },
+    sports: { label: "Sports", color: "#d4f1d4", textColor: "#5a8f5a" },
+    arts: { label: "Arts", color: "#f4d4f4", textColor: "#9a6e9a" },
+    academic: { label: "Academic", color: "#d4e8f4", textColor: "#5a88a8" },
+    community: { label: "Community", color: "#ffe8c4", textColor: "#c98a3c" },
+    technology: { label: "Technology", color: "#e4d4f4", textColor: "#7a5a9a" },
   };
 
   // State for activities and filters
@@ -304,6 +304,21 @@ document.addEventListener("DOMContentLoaded", () => {
     return details.schedule;
   }
 
+  // Function to create social sharing URLs
+  function createShareUrls(activityName, description) {
+    const shareText = `Check out ${activityName} at Mergington High School! ${description}`;
+    const shareUrl = window.location.href;
+    const encodedText = encodeURIComponent(shareText);
+    const encodedUrl = encodeURIComponent(shareUrl);
+
+    return {
+      twitter: `https://twitter.com/intent/tweet?text=${encodedText}&url=${encodedUrl}`,
+      facebook: `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}&quote=${encodedText}`,
+      whatsapp: `https://wa.me/?text=${encodedText}%20${encodedUrl}`,
+      email: `mailto:?subject=${encodeURIComponent(activityName + ' at Mergington High School')}&body=${encodedText}%20${encodedUrl}`,
+    };
+  }
+
   // Function to determine activity type (this would ideally come from backend)
   function getActivityType(activityName, description) {
     const name = activityName.toLowerCase();
@@ -499,6 +514,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Format the schedule using the new helper function
     const formattedSchedule = formatSchedule(details);
 
+    // Create social share URLs
+    const shareUrls = createShareUrls(name, details.description);
+
     // Create activity tag
     const tagHtml = `
       <span class="activity-tag" style="background-color: ${typeInfo.color}; color: ${typeInfo.textColor}">
@@ -551,6 +569,13 @@ document.addEventListener("DOMContentLoaded", () => {
             )
             .join("")}
         </ul>
+      </div>
+      <div class="social-share-container">
+        <span class="social-share-label">Share:</span>
+        <a href="${shareUrls.twitter}" class="social-share-button twitter" target="_blank" rel="noopener noreferrer" title="Share on Twitter">𝕏</a>
+        <a href="${shareUrls.facebook}" class="social-share-button facebook" target="_blank" rel="noopener noreferrer" title="Share on Facebook">f</a>
+        <a href="${shareUrls.whatsapp}" class="social-share-button whatsapp" target="_blank" rel="noopener noreferrer" title="Share on WhatsApp">📱</a>
+        <a href="${shareUrls.email}" class="social-share-button email" title="Share via Email">✉️</a>
       </div>
       <div class="activity-card-actions">
         ${

@@ -1,35 +1,35 @@
-/* Color palette */
+/* Color palette - Pastel Theme */
 :root {
-  /* Primary colors */
-  --primary: #1a237e;
-  --primary-light: #534bae;
-  --primary-dark: #000051;
-  --primary-text: #ffffff;
+  /* Primary colors - Soft pastel blue */
+  --primary: #a8c4e6;
+  --primary-light: #c5d9f1;
+  --primary-dark: #7da5d8;
+  --primary-text: #2d3748;
 
-  /* Secondary colors */
-  --secondary: #ff6f00;
-  --secondary-light: #ffa040;
-  --secondary-dark: #c43e00;
-  --secondary-text: #ffffff;
+  /* Secondary colors - Pastel coral/peach */
+  --secondary: #ffb8a4;
+  --secondary-light: #ffd6c9;
+  --secondary-dark: #ff9c85;
+  --secondary-text: #2d3748;
 
-  /* Neutral colors */
-  --background: #f5f5f5;
+  /* Neutral colors - Soft pastels */
+  --background: #fef9f7;
   --surface: #ffffff;
-  --text-primary: #333333;
-  --text-secondary: #666666;
-  --border: #e0e0e0;
-  --border-light: #f0f0f0;
-  --border-focus: #d0d0d0;
+  --text-primary: #4a5568;
+  --text-secondary: #718096;
+  --border: #e5d4cf;
+  --border-light: #f5ebe8;
+  --border-focus: #d6bcb3;
 
-  /* Feedback colors */
-  --success: #2e7d32;
-  --success-light: #e8f5e9;
-  --warning: #ff9800;
-  --warning-light: #fff3cd;
-  --error: #c62828;
-  --error-light: #ffebee;
-  --info: #0c5460;
-  --info-light: #d1ecf1;
+  /* Feedback colors - Pastel versions */
+  --success: #9fd4a4;
+  --success-light: #e8f7ea;
+  --warning: #ffd18f;
+  --warning-light: #fff5e5;
+  --error: #f5a8a8;
+  --error-light: #ffeaea;
+  --info: #a8d5e6;
+  --info-light: #e5f4f9;
 }
 
 * {
@@ -663,4 +663,87 @@ footer {
 
 #logout-button:hover {
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Social sharing buttons */
+.social-share-container {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.social-share-label {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  margin-right: 4px;
+  font-weight: 500;
+}
+
+.social-share-button {
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  padding: 0;
+  text-decoration: none;
+}
+
+.social-share-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.social-share-button.twitter {
+  background-color: #d4e8f4;
+  border-color: #5a88a8;
+  color: #5a88a8;
+}
+
+.social-share-button.twitter:hover {
+  background-color: #5a88a8;
+  color: white;
+}
+
+.social-share-button.facebook {
+  background-color: #d4e8f4;
+  border-color: #5a88a8;
+  color: #5a88a8;
+}
+
+.social-share-button.facebook:hover {
+  background-color: #5a88a8;
+  color: white;
+}
+
+.social-share-button.whatsapp {
+  background-color: #d4f1d4;
+  border-color: #5a8f5a;
+  color: #5a8f5a;
+}
+
+.social-share-button.whatsapp:hover {
+  background-color: #5a8f5a;
+  color: white;
+}
+
+.social-share-button.email {
+  background-color: #f4d4f4;
+  border-color: #9a6e9a;
+  color: #9a6e9a;
+}
+
+.social-share-button.email:hover {
+  background-color: #9a6e9a;
+  color: white;
 }
