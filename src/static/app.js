@@ -305,7 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Function to create social sharing URLs
-  function createShareUrls(activityName, description, schedule) {
+  function createShareUrls(activityName, description) {
     const shareText = `Check out ${activityName} at Mergington High School! ${description}`;
     const shareUrl = window.location.href;
     const encodedText = encodeURIComponent(shareText);
@@ -515,7 +515,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formattedSchedule = formatSchedule(details);
 
     // Create social share URLs
-    const shareUrls = createShareUrls(name, details.description, formattedSchedule);
+    const shareUrls = createShareUrls(name, details.description);
 
     // Create activity tag
     const tagHtml = `
