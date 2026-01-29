@@ -32,6 +32,40 @@
   --info-light: #e5f4f9;
 }
 
+/* Dark mode colors */
+body.dark-mode {
+  /* Primary colors - adjusted for dark mode */
+  --primary: #5c6bc0;
+  --primary-light: #8e99f3;
+  --primary-dark: #26418f;
+  --primary-text: #ffffff;
+
+  /* Secondary colors - kept vibrant */
+  --secondary: #ff9800;
+  --secondary-light: #ffb74d;
+  --secondary-dark: #f57c00;
+  --secondary-text: #000000;
+
+  /* Neutral colors - dark theme */
+  --background: #121212;
+  --surface: #1e1e1e;
+  --text-primary: #e0e0e0;
+  --text-secondary: #a0a0a0;
+  --border: #333333;
+  --border-light: #2a2a2a;
+  --border-focus: #404040;
+
+  /* Feedback colors - adjusted for dark mode */
+  --success: #66bb6a;
+  --success-light: #2e4d30;
+  --warning: #ffa726;
+  --warning-light: #4d3d1f;
+  --error: #ef5350;
+  --error-light: #4d2b2b;
+  --info: #4fc3f7;
+  --info-light: #1f3d4d;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -48,6 +82,7 @@ body {
   padding: 12px;
   background-color: var(--background);
   font-size: 0.9rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 header {
@@ -85,6 +120,7 @@ section {
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
+  transition: background-color 0.3s ease;
 }
 
 section h3 {
@@ -642,13 +678,40 @@ footer {
   .sidebar-filters {
     width: 100%;
   }
+
+  /* Adjust header controls for mobile */
+  #dark-mode-toggle {
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 1rem;
+  }
+
+  #user-controls {
+    top: 8px;
+    right: 50px;
+  }
+
+  .icon-button {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+  }
+
+  .icon-button .user-icon {
+    font-size: 0.9rem;
+  }
+
+  /* Hide the "Login" text on very small screens */
+  .icon-button span:last-child {
+    display: none;
+  }
 }
 
 /* User controls in header */
 #user-controls {
   position: absolute;
   top: 10px;
-  right: 15px;
+  right: 70px;
 }
 
 #user-status {
