@@ -646,6 +646,33 @@ footer {
   .sidebar-filters {
     width: 100%;
   }
+
+  /* Adjust header controls for mobile */
+  #dark-mode-toggle {
+    top: 8px;
+    right: 8px;
+    padding: 4px 8px;
+    font-size: 1rem;
+  }
+
+  #user-controls {
+    top: 8px;
+    right: 50px;
+  }
+
+  .icon-button {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+  }
+
+  .icon-button .user-icon {
+    font-size: 0.9rem;
+  }
+
+  /* Hide the "Login" text on very small screens */
+  .icon-button span:last-child {
+    display: none;
+  }
 }
 
 /* User controls in header */

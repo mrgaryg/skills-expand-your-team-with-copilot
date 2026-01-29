@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   darkModeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     const isDark = document.body.classList.contains("dark-mode");
-    localStorage.setItem("darkMode", isDark);
+    localStorage.setItem("darkMode", String(isDark));
     darkModeIcon.textContent = isDark ? "☀️" : "🌙";
   });
 
